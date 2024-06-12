@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body p-2">
+                        <input type="text" id="display" class="form-control mb-3 text-right" disabled>
+                        <div class="row mb-2 no-gutters justify-content-between">
+                            <button class="btn btn-primary col-2 mx-1" id="blue" onclick="clearDisplay()">C</button>
+                            <button class="btn btn-primary col-2 mx-1" id="blue" onclick="appendToDisplay('/')">/</button>
+                            <button class="btn btn-primary col-2 mx-1" id="blue" onclick="appendToDisplay('*')">*</button>
+                            <button class="btn btn-primary col-2 mx-1" id="blue" onclick="deleteLast()">DEL</button>
+                        </div>
+                        <div class="row mb-2 no-gutters justify-content-between">
+                            <button class="btn btn-light col-2 mx-1" id="blue" onclick="appendToDisplay('7')">7</button>
+                            <button class="btn btn-light col-2 mx-1" id="blue" onclick="appendToDisplay('8')">8</button>
+                            <button class="btn btn-light col-2 mx-1" id="blue" onclick="appendToDisplay('9')">9</button>
+                            <button class="btn btn-primary col-2 mx-1" id="blue" onclick="appendToDisplay('-')">-</button>
+                        </div>
+                        <div class="row mb-2 no-gutters justify-content-between">
+                            <button class="btn btn-light col-2 mx-1" id="blue" onclick="appendToDisplay('4')">4</button>
+                            <button class="btn btn-light col-2 mx-1" id="blue" onclick="appendToDisplay('5')">5</button>
+                            <button class="btn btn-light col-2 mx-1" id="blue" onclick="appendToDisplay('6')">6</button>
+                            <button class="btn btn-primary col-2 mx-1" id="blue" onclick="appendToDisplay('+')">+</button>
+                        </div>
+                        <div class="row mb-2 no-gutters justify-content-between">
+                            <button class="btn btn-light col-2 mx-1" id="blue" onclick="appendToDisplay('1')">1</button>
+                            <button class="btn btn-light col-2 mx-1" id="blue" onclick="appendToDisplay('2')">2</button>
+                            <button class="btn btn-light col-2 mx-1" id="blue" onclick="appendToDisplay('3')">3</button>
+                            <button class="btn btn-primary col-2 mx-1"  id="blue"onclick="calculateResult()">=</button>
+                        </div>
+                        <div class="row mb-2 no-gutters justify-content-between">
+                            <button class="btn btn-light col-5 mx-1" id="blue" onclick="appendToDisplay('0')">0</button>
+                            <button class="btn btn-light col-5 mx-2" id="blue" onclick="appendToDisplay('.')">.</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script6.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+body {
+  margin: 10px 20px;
+}
+
+p {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  margin-top: 16px;
+}
+
+
+.wrapper {
+  display: flex;
+  height: 40px;
+  background-color: green;
+  margin-bottom: 20px;
+}
+
+
+.redExample {
+  flex: 1;
+  background-color: red;
+}
+{
+
+  flex: 1;
+  background-color: blue;
+}
+
+/
+.emptyExample2 {
+  display: flex;
+  flex: 1;
+  flex-direction: row-reverse;
+}
+
+.blueExample2 {
+  width: 80px;
+  background-color: blue;
+}
+
+/* TODO: Add CSS for the rest of your solution below */
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.redExample2 {
+  height: 40px;
+  width: 50px;
+  background-color: red;
+  display: flex;
+}
+
+.redExample3 {
+  width: 70%;
+  background-color: red;
+}
+
+.redExample4 {
+  height: 40px;
+  width: 30px;
+  background-color: red;
+}
+
+.itemsAreCentered {
+  align-items: center;
+  justify-content: center;
+}
+
+.wide-red {
+  background-color: red;
+  display: flex;
+}
+
+.wide-green {
+  background-color: green;
+  height: 40px;
+  display: flex;
+  flex-grow: 1;
+}
+
+.aligned-with-space {
+  align-content: space-between;
+}
+
+.bg-blue {
+  background-color: blue;
+}
+
+.yellow-box-solid {
+  background-color: yellow;
+  width: 70px;
+}
+
+.yellow-box-flex {
+  background-color: yellow;
+  width: 19%;
+}
+
+.green-box-flex {
+  background-color: green;
+  width: 2%;
+}
+
+.bg-yellow {
+  background-color: yellow;
+}

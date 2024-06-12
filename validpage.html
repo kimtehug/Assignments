@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style7.css">
+  
+</head>
+<body>
+    <div class="form-container">
+        <form id="loginForm">
+            <h3>Login</h3>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <div id="emailError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <div id="passwordError" class="error"></div>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            clearErrors();
+
+            let email = document.getElementById('exampleInputEmail1').value;
+            let password = document.getElementById('exampleInputPassword1').value;
+            let valid = true;
+
+            if (!email) {
+                document.getElementById('emailError').innerText = 'Email is required.';
+                valid = false;
+            }
+
+            if (!password) {
+                document.getElementById('passwordError').innerText = 'Password is required.';
+                valid = false;
+            }
+
+            if (valid) {
+                alert('Form submitted successfully!');
+                // Here you can add the form submission logic, like sending data to the server
+            }
+        });
+
+        function clearErrors() {
+            document.getElementById('emailError').innerText = '';
+            document.getElementById('passwordError').innerText = '';
+        }
+    </script>
+</body>
+</html>

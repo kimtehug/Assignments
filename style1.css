@@ -1,0 +1,34 @@
+/* styles.css */
+body {
+    background-color: #f8f9fa;
+  
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+button {
+    font-size: 1.5rem;
+    height: 60px;
+}
+#display {
+    height: 60px;
+    font-size: 2rem;
+}
+.btn-primary {
+    background-color:  #1be9ca;
+    border-color: #1be9ca;
+}
+.btn-primary:hover {
+    background-color:  #1be9ca;
+    border-color:  #1be9ca;
+}
+.btn btn-primary col-3{
+    background-color: #1be9ca;
+}
+.btn btn-primary col-3{
+    background-color:  #1be9ca;
+}
+#blue {
+    background-color:  #1be9ca;
+}

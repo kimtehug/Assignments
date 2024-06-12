@@ -1,0 +1,66 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.form-container {
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input, button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 15px; /* Rounded border for input fields */
+    border: 1px solid #ccc;
+}
+
+input::placeholder {
+    color: transparent; /* Make the original placeholder text transparent */
+}
+
+input:focus::placeholder {
+    color: transparent; /* Keep placeholder text transparent when focused */
+}
+
+input::before {
+    content: attr(placeholder);
+    position: absolute;
+    padding-left: 10px;
+    color: gray;
+    font-size: 16px;
+    display: block;
+    height: 100%;
+    line-height: 30px;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+input:focus::before,
+input:not(:placeholder-shown)::before {
+    content: ''; /* Hide the pseudo-element when the input is focused or has a value */
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px; /* Rounded border for button */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+label, h1 {
+    margin-top: 10px;
+}
