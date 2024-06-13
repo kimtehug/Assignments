@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+       
+        }
+        .container {
+            height: 285px;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 155px;
+            margin-top: 60px;
+            padding-top: 20px;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Weather App</h1>
+    <input type="number" id="latitude" placeholder="Latitude" step="any">
+<br>
+<br>
+    <input type="number" id="longitude" placeholder="Longitude" step="any">
+<br>
+<br>
+<div>
+    
+    <button onclick="fetchWeather()">Get Weather</button>
+    <div class="result" id="result">
+    
+    </div>
+</div>
+
+<script>
+    async function fetchWeather() {
+        const lat = document.getElementById('latitude').value;
+        const lon = document.getElementById('longitude').value;
+
+        if (!lat || !lon) {
+            alert("Please enter both latitude and longitude");
+            return;
+        }
+
+        const url = `https://weatherbit-v1-mashape.p.rapidapi.com/forecast/3hourly?lat=${lat}&lon=${lon}&units=imperial&lang=en`;
+        const options = {
+            method: 'GET',
+            headers: {
+                'x-rapidapi-key': '1b5ff3e2d3msh354f282600dc888p1bed5fjsn9e64b83a2793',
+                'x-rapidapi-host': 'weatherbit-v1-mashape.p.rapidapi.com'
+            }
+        };
+
+        try {
+            const response = await fetch(url, options);
+            const result = await response.json();
+            displayWeather(result);
+        } catch (error) {
+            console.error(error);
+            alert("Failed to fetch weather data. Please try again later.");
+        }
+    }
+
+    function displayWeather(data) {
+        const resultDiv = document.getElementById('result');
+        if (data && data.data && data.data.length > 0) {
+            const weather = data.data[0];
+            resultDiv.innerHTML = `
+                <h2>Weather Forecast</h2>
+                <p>Temperature: ${weather.temp} °F</p>
+                <p>Weather: ${weather.weather.description}</p>
+                <p>Wind Speed: ${weather.wind_spd} m/s</p>
+                <p>Timestamp: ${weather.timestamp_local}</p>
+            `;
+        } else {
+            resultDiv.innerHTML = `<p>No weather data available</p>`;
+        }
+    }
+</script>
+
+</body>
+</html>
+
